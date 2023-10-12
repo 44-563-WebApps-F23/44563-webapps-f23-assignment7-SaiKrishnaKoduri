@@ -14,21 +14,30 @@
   <h2>Sai Krishna Koduri speed check</h2>
   <div id="target">Your time</div>
   <div id="counter">Count</div>
-  <button>Start Timer</button>
+  <button onclick="startTime()">Start Timer</button>
   <button onclick="recordTime()">React</button>
-
-
-  
-  <p id="target">I will become red </p>
-  
   <script>
   let reactTime=undefined;
   function recordTime() {
     reactTime=Date.now();
     console.log(reactTime);
   } 
-  
+  function startTime() {
+            for (let i = 0; i < 9; i++) {
+                setTimeout(function () {
+                    document.getElementById("counter").innerHTML = `Count: ${i}`;
+                }, (8 - i) * 1000);
+            }
+            setTimeout(function (){
+                if (reactTime === undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow";
+                } else {
+                    const endTime = Date.now();
+                    const elapsed = endTime - reactTime;
+                    document.getElementById("target").innerHTML = `Time was ${elapsed} ms`;
+                }
+            }, 8000);
+        }  
   </script>
-
 </body>
 </html>
