@@ -92,10 +92,9 @@
             }
             else{
                 imageElement.src = "pirate.jpeg";
+                penalty++;
             }
-            checkCount++;
-            penalty++;
-            penalty = penalty < 0 ? 0 : penalty;
+            checkCount++;            
             document.getElementById("locations").innerHTML =  "Number of locations checked is : " + checkCount;
             document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
             lastCheck = position;
