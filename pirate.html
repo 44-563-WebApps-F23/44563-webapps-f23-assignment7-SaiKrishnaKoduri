@@ -30,6 +30,7 @@
     <div style="background-color:beige; font-family: Calibri, Candara, Segoe, Optima, sans-serif; font-size:xx-large; color:brown;" id="penalty" class="lead">Penalty is zero.</div><br>
     <div style="background-color: blanchedalmond; font-size:xx-large; color: brown;" onclick="help()">Click for help.</div><br>
     <div style="background-color:bisque; font-family: Calibri, Candara, Segoe, Optima, sans-serif; font-size:xx-large; color:brown;" id="help" class="lead">Help report</div><br>
+    <button onclick="reset()">Reset the game</button>
     <div class="container">
         <div class="col"><img src="location.jpg" id="0" onclick="check(0)"></div>
         <div class="col"><img src="location.jpg" id="1" onclick="check(1)"></div>
@@ -129,6 +130,18 @@
             penalty += 2;
             document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
             document.getElementById("help").innerHTML = helpText;
+        }
+        function reset()
+        {
+            trapLocation=Math.floor(Math.random()*25);
+            do{treasureLocation=Math.floor(Math.random()*25)
+            }
+            while(treasureLocation===trapLocation)
+            checkCount=0;
+            penalty=0;
+            gameOver=false;
+            document.getElementById('locations').innerHTML=checkCount;
+            document.getElementById('penalty').innerHTML=penalty;
         }    
     </script>
 </body>
