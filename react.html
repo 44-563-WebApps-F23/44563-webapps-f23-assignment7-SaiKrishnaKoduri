@@ -23,10 +23,11 @@
     console.log(reactTime);
   } 
   function startTime() {
-            for (let i = 0; i < 9; i++) {
+            r=Math.floor(Math.random()*9)+2
+            for (let i = r; i > 0; i--) {
                 setTimeout(function () {
                     document.getElementById("counter").innerHTML = `Count: ${i}`;
-                }, (8 - i) * 1000);
+                }, (r - i) * 1000);
             }
             setTimeout(function (){
                 if (reactTime === undefined) {
@@ -36,7 +37,7 @@
                     const elapsed = endTime - reactTime;
                     document.getElementById("target").innerHTML = `Time was ${elapsed} ms`;
                 }
-            }, 8000);
+            }, r*1000);
         }  
   </script>
 </body>
